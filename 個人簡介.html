@@ -1,150 +1,246 @@
 <!DOCTYPE html>
 <html>
-<title>個人簡介</title>
+<head>
+<title>茶籽堂購物網</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
-<body class="w3-black">
+</head>
+<body class="w3-content" style="max-width:1200px">
 
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <img src="img/大.jpg" style="width:100%">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>首頁</p>
-  </a>
-  <a href="專業教學.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>專業教學</p>
-  </a>
-  <a href="興趣教學.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
-    <p>興趣分享</p>
-  </a>
-  <a href="未來願景.html#" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>未來願景</p>
-  <a href="求學打工經驗.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>經驗分享</p>
-  </a>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <img src="C:/Users/Lee/Desktop/WEB/01.png" alt="Jeans" style="width:100%">
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+     <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+     新品上市<i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button">肖楠葉平衡沐浴乳</a>
+      <a href="#" class="w3-bar-item w3-button">瑪莉樹水潤沐浴乳</a>
+      <a href="#" class="w3-bar-item w3-button">台灣植萃系列</a>
+      <a href="#" class="w3-bar-item w3-button">品牌全新升級</a>
+    </div>
+    <a href="#" class="w3-bar-item w3-button">油系列</a>
+    <a href="#" class="w3-bar-item w3-button">髮系列</a>
+   
+    <a href="#" class="w3-bar-item w3-button">身系列</a>
+    <a href="#" class="w3-bar-item w3-button">家系列</a>
+    <a href="#" class="w3-bar-item w3-button">禮系列</a>
+    <a href="#" class="w3-bar-item w3-button">VIP專區</a>
+  </div>
+  <a href="file:///C:/Users/Lee/Desktop/WEB/login.html#contact" class="w3-bar-item w3-button w3-padding">會員申請</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">客服信箱</a> 
+  <a href="file:///C:/Users/Lee/Desktop/WEB/vip.html#"  class="w3-bar-item w3-button w3-padding">升級專區</a>
 </nav>
 
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">首頁</a>
-    <a href="file:///C:/Users/%E6%A2%81%E5%AE%B6%E6%89%BF/Desktop/%E7%B6%B2%E9%A0%81/%E5%B0%88%E6%A5%AD%E6%95%99%E5%AD%B8.html#portfolio" class="w3-bar-item w3-button" style="width:25% !important">專業教學</a>
-    <a href="興趣教學.html" class="w3-bar-item w3-button" style="width:25% !important">興趣分享</a>
-    <a href="未來願景.html" class="w3-bar-item w3-button" style="width:25% !important">未來願景</a>
-    <a href="求學打工經驗.html" class="w3-bar-item w3-button" style="width:25% !important">經驗分享</a>
-  </div>
-</div>
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
 
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">教育家</span>有教無類</h1>
-    <p>教育要在感動中完成，不是生產線，也不是分數排名。</p>
-    <img src="img/01.jpg" alt="教育" class="w3-image" width="992" height="1108">
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <p class="w3-left">首頁</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
   </header>
 
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h2 class="w3-text-light-grey">我叫梁家承</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>就讀正修科技大學資訊管理系暨教育專業學程，關於教育我有話要說；
-      教育隨著人權，隨著民主而有不一樣的變化，教育體制不可能有完美，只有不斷改良改革及接納才可以有更完善的體制去栽培學生，國家未來主人翁；著名教育家陶行知先生說過：“我以為好的顯示不是教書，不是教學生，乃是教學生學。為了達到這目標，我會去尋找如何指導學生學習的最佳方式
-    </p>
-    <h3 class="w3-padding-16 w3-text-light-grey">我的專長</h3>
-    <p class="w3-wide">資訊科技</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img src="C:/Users/Lee/Desktop/WEB/2.jpg" alt="Jeans" style="width:100%">
+    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small">經典重現</h1>
+      <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+      <h1 class="w3-hide-small">傳奇經典</h1>
+      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">升級VIP</a></p>
     </div>
-    <p class="w3-wide">教育專業</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:90%"></div>
-    </div>
-    <p class="w3-wide">程式撰寫</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
-    </div><br>
-    
-    <!-- Grid for pricing tables -->
+  </div>
 
-    <!-- End Grid/Pricing tables -->
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p>8項目</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row w3-grayscale">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="C:/Users/Lee/Desktop/WEB/油.jpg" style="width:100%">
+        <p>【人氣推薦】肖楠葉油保養明星組<br><b>NT $3,115</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="C:/Users/Lee/Desktop/WEB/油二.jpg" style="width:100%">
+        <p>【新客推薦】馬栗樹水潤雙入組<br><b>NT $1,020</b></p>
+      </div>
     </div>
-    
-    <!-- Testimonials -->
-    <h3 class="w3-padding-24 w3-text-light-grey">我的專長簡介</h3>  
-    <img src="img/02.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">程式語言</span> JAVA、VB、C、PYTHON、網頁撰寫</p>
-  <br>
-    
-    <img src="img/03.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">教育專業</span> 教育心理學、教育概論、青少年發展輔導</p>
-  <!-- End About Section -->
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="C:/Users/Lee/Desktop/WEB/油三.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">馬上買 <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>植萃護手霜三入組(修護、嫩白、保濕、滋養任選)<br><b>NT $1,320</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="C:/Users/Lee/Desktop/WEB/油四.jpg" style="width:100%">
+        <p>【青蜜滋養禮盒】青蜜滋養沐浴露+乳液+護手霜<br><b>NT $1,730</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="C:/Users/Lee/Desktop/WEB/油五.jpg" style="width:100%">
+        <p>【手部養護三件組】馬栗樹洗手露330mL<br><b>NT $2,120</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="C:/Users/Lee/Desktop/WEB/油六.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">促銷</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">馬上買 <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>【手部養護三件組】肖楠葉洗手露330mL+補充包+護手霜30mL擇一<br><b class="w3-text-red">NT $1,120</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="C:/Users/Lee/Desktop/WEB/油七.jpg" style="width:100%">
+        <p>【溫和洗淨呵護組】貼身衣物手洗精330mL+補充包2入<br><b>NT $1,473</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="C:/Users/Lee/Desktop/WEB/油八.jpg" style="width:100%">
+        <p>【2022苦茶油雙重奏】臺灣大果苦茶油250mL雙入+冷用品用匙<br><b>NT $3,760</b></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subscribe section -->
+  <div class="w3-container w3-black w3-padding-32">
+    <h1>成為VIP</h1>
+    <p>想成為VIP?立即將帳號填寫至以下進行驗證:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="輸入您的帳號" style="width:100%"></p>
+    <button type="button" class="w3-button w3-red w3-margin-bottom">升級VIP</button>
   </div>
   
-  <!-- Portfolio Section -->
- 
-  <!-- End Portfolio Section -->
-  </div>
+  <!-- Footer -->
+  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+      <div class="w3-col s4">
+        <h4>會員專區</h4>
+        <p>您申辦了嗎? 馬上申辦體驗吧!.</p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-border" type="text" placeholder="姓名" name="姓名" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="帳號" name="帳號" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="密碼" name="密碼" required></p>
+          <button type="submit" class="w3-button w3-block w3-black">立即申請</button>
+        </form>
+      </div>
 
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">聯絡我</h2>
-    <hr style="width:200px" class="w3-opacity">
+      <div class="w3-col s4">
+        <h4>更多資訊</h4>
+        <p><a href="#">關於我們</a></p>
+        <p><a href="#">品牌介紹</a></p>
+        <p><a href="#">信用評分</a></p>
+        <p><a href="#">顧客好評</a></p>
+        <p><a href="#">銷售位置</a></p>
+        <p><a href="#">各大通路</a></p>
+        <p><a href="#">疑問?</a></p>
+        <p><a href="#">其他</a></p>
+        
+      </div>
 
-    <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> 高雄市小港區大馬路</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> 電話: +886 0988888819</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Mail: jaoshdnf2gahbjbkyk@gzmzazizlz.zczozmz</p>
-    </div><br>
-    <p>任何問題請傳達給我!</p>
-
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="姓名" required name="姓名"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="標題" required name="標題"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="內容" required name="內容"></p>
-      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i> 寄送
-        </button>
-      </p>
-    </form>
-  <!-- End Contact Section -->
-  </div>
-  
-    <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <a href="https://www.facebook.com/profile.php?id=100009518949516" i class="fa fa-facebook-official w3-hover-opacity"></a></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <p class="w3-medium">製作人 <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">梁家承</a></p>
-  <!-- End footer -->
+      <div class="w3-col s4 w3-justify">
+        <h4>店面位置</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i>高雄市鳥松區正修科大</p>
+        <p><i class="fa fa-fw fa-phone"></i> 0800 987 987</p>
+        <p><i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
+        <h4>付款方式</h4>
+        <p><i class="fa fa-fw fa-cc-amex"></i> 現金</p>
+        <p><i class="fa fa-fw fa-credit-card"></i>信用卡</p>
+        <br>
+        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+        <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+        <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+      </div>
+    </div>
   </footer>
 
-<!-- END PAGE CONTENT -->
+  <div class="w3-black w3-center w3-padding-24">製作人: <a  title="W3.CSS" target="_blank" class="w3-hover-opacity">馬哥</a></div>
+
+  <!-- End page content -->
 </div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">客服回應</h2>
+      <p>親愛的客人，請將您要告訴我們的話填寫至下方，我們會以最快的速度為您服務!</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="輸入您的 e-mail或 電話號碼"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">送出</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Accordion 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
 
 </body>
 </html>
